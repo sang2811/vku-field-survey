@@ -1,0 +1,23 @@
+{
+  "name": "vku-field-survey",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:web": "flutter pub get && flutter build web --release --pwa-strategy=none",
+    "serve:local": "npx wrangler pages dev build/web",
+    "deploy:cloudflare": "npm run build:web && npx wrangler pages deploy build/web --project-name vku-field-survey",
+    "cap:init": "npm install && npm run build:web && npx cap add android",
+    "cap:sync": "npm run build:web && npx cap sync android",
+    "cap:open": "npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/camera": "^6.0.2",
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/geolocation": "^6.0.1"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}
