@@ -2,9 +2,10 @@
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
-build/
+build/*
+!build/web/
+!build/web/**
 coverage/
-pubspec.lock
 node_modules/
 dist/
 android/
